@@ -1,7 +1,8 @@
 function index(req, res, app) {
     var idea = getModel(app);
 
-    idea.find({}).sort({x:-1}).limit(20).exec(function (data) {
+    idea.find({}).sort({x:-1}).limit(20).exec(function (err, data) {
+        if (err) throw err;
         res.json(data);
     });
 }
