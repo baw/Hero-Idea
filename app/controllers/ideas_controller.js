@@ -7,6 +7,17 @@ function index(req, res, app) {
     });
 }
 
+function show(req, res, app) {
+    var Idea = getModel(app);
+    var idea_id = req.params.idea_id;
+
+    Idea.findById(idea_id, function (err, idea) {
+        if (err) throw err;
+
+        res.json(idea);
+    });
+}
+
 function create(req, res, app) {
     var Idea = getModel(app);
     var post = "";
@@ -33,5 +44,6 @@ function getModel(app) {
 
 module.exports = {
     "index": index,
+    "show": show,
     "create": create
 };

@@ -193,6 +193,10 @@ module.exports = function(app, passport) {
     app.get("/api/ideas", function (req, res) {
        ideas_controller.index(req, res, app); 
     });
+
+    app.get("/api/ideas/:idea_id", function (req, res, idea_id) {
+        ideas_controller.show(req, res, app, idea_id);
+    });
     
     app.post("/api/ideas", function (req, res) {
         ideas_controller.create(req, res, app);
