@@ -1,3 +1,5 @@
+var ideas_controller = require("controllers/ideas_controller.js");
+
 module.exports = function(app, passport) {
 
 // normal routes ===============================================================
@@ -183,6 +185,13 @@ module.exports = function(app, passport) {
 		});
 	});
 
+// API
+
+    // ideas index
+    // returns most recent 20 ideas
+    app.get("api/ideas", function (req, res) {
+       ideas_controller.index(req, res, app); 
+    });
 
 };
 
