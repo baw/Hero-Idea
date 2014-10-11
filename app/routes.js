@@ -1,5 +1,5 @@
-var users_controller = require("controllers/users_controller.js");
-var ideas_controller = require("controllers/ideas_controller.js");
+var users_controller = require("./controllers/users_controller.js");
+var ideas_controller = require("./controllers/ideas_controller.js");
 
 module.exports = function(app, passport) {
 
