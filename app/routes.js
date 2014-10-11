@@ -198,7 +198,7 @@ module.exports = function(app, passport) {
         ideas_controller.show(req, res, app, idea_id);
     });
     
-    app.post("/api/ideas", function (req, res) {
+    app.post("/api/ideas", isLoggedInForAPI, function (req, res) {
         ideas_controller.create(req, res, app);
     });
 };
@@ -209,4 +209,13 @@ function isLoggedIn(req, res, next) {
 		return next();
 
 	res.redirect('/');
+}
+
+function isLoggedInForAPI(req, res, next) {
+    if (req.isAuthenticated()) {
+        return next();
+    }
+    
+    res.statusCode = 401;
+    res.json({"error" : "not logged in"});
 }
