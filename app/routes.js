@@ -193,7 +193,10 @@ module.exports = function(app, passport) {
     app.get("/api/ideas", function (req, res) {
        ideas_controller.index(req, res, app); 
     });
-
+    
+    app.post("/api/ideas", function (req, res) {
+        ideas_controller.create(req, res, app);
+    });
 };
 
 // route middleware to ensure user is logged in
