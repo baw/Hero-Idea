@@ -5,7 +5,8 @@ module.exports = function (app) {
         title       : String,
         description : String,
         created_at  : Date,
-        updated_at  : Date
+        updated_at  : Date,
+        owner_id    : String
     });
 
     ideaSchema.pre("save", function (next) {

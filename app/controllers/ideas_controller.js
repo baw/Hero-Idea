@@ -28,7 +28,10 @@ function create(req, res, app) {
     
     req.on("end", function () {
         console.log("post data: " + post);
-        post = JSON.parse(post); 
+        post = JSON.parse(post);
+
+        post.idea.owner_id = req.user.id;
+
         Idea.create(post.idea, function (err, data) {
             if (err) throw err;
 
