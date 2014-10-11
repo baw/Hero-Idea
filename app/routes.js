@@ -190,7 +190,7 @@ module.exports = function(app, passport) {
 
     // ideas index
     // returns most recent 20 ideas
-    app.get("api/ideas", function (req, res) {
+    app.get("/api/ideas", function (req, res) {
        ideas_controller.index(req, res, app); 
     });
 
