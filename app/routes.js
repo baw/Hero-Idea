@@ -1,6 +1,8 @@
 var users_controller = require("./controllers/users_controller.js");
 var ideas_controller = require("./controllers/ideas_controller.js");
 
+var express = require("express");
+
 module.exports = function(app, passport) {
 
 // normal routes ===============================================================
@@ -205,6 +207,8 @@ module.exports = function(app, passport) {
     app.post("/api/ideas", isLoggedInForAPI, allowCrossDomain, function (req, res) {
         ideas_controller.create(req, res, app);
     });
+
+    app.use("/mobile", express.static(__dirname + "/mobile-app/app/www/")
 };
 
 // route middleware to ensure user is logged in
