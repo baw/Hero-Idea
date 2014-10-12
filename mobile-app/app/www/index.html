@@ -27,9 +27,15 @@
 								<span class='right-slider glyphicon glyphicon-chevron-right'></span>
 						</h4>
 					</div>
-				  <div id="<%=idea.escape('id')%>" class="panel-collapse collapse in">
+				  <div id="<%=idea.escape('id')%>" class="panel-collapse collapse">
 				       <div class="panel-body">
+								 <div class='vote'>
+									 <span class='glyphicon glyphicon-chevron-up upvote'></span>
+	 								 <span class='glyphicon glyphicon-chevron-down downvote'></span>
+								 </div>
+								 <div class='description'>
 								 <%= idea.escape('description')%>
+								 </div>
 							 </div>
 					 </div>
 				 </div>

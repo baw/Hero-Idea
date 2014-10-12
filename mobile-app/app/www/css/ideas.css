@@ -13,6 +13,21 @@
 	float: right;
 	padding-bottom: 1px;
 }
+.upvote{
+	width: 100%;
+	float:left;
+	display: inline;
+	margin-bottom: 4px;
+	margin-left: 1px;
+	font-size: 17px;
+}
+
+.downvote{
+	width: 100%;
+	float:left;
+	display: inline;
+	font-size: 17px;
+}
 
 li{
 	height: 35px;
@@ -33,8 +48,16 @@ li{
 	
 }
 
+.vote {
+	display:inline-block;
+}
+
+.voted{
+	color: orange;
+}
+
 .description{
-	display: block;
+	display: inline-block;
 }
 
 .clearfix:after {
