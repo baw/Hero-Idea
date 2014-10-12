@@ -31,7 +31,8 @@ app.set('view engine', 'ejs'); // set up ejs for templating
 app.set('db', mongoose)
 
 // create db models
-require("./app/models/idea.js")(app); 
+require("./app/models/idea.js")(app);
+require("./app/models/vote.js")(app);
 
 // required for passport
 app.use(session({ secret: 'ilovescotchscotchyscotchscotch' })); // session secret
