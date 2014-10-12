@@ -50,6 +50,7 @@ li{
 
 .vote {
 	display:inline-block;
+    margin-bottom:-15px;
 }
 
 .voted{
