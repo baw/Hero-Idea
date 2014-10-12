@@ -1,13 +1,14 @@
 .right-slider {
-	border: solid black 1px;
-	/* padding: 4px; */
+/*	border: solid black 1px;
+
 	padding-left: 5px;
 	padding-right: 5px;
 	margin-right: 7%;
 	margin-top: 1%;
 	background-color: lightgray;
 	padding-top: -4em;
-	border-radius: 76%;
+	border-radius: 76%;*/
+	opacity: 0.3;
 	display: inline-block;
 	float: right;
 	padding-bottom: 1px;
@@ -25,6 +26,29 @@ li{
 	margin-top: 1.5%;
 	margin-left: 3%;
 }
+
+.active-idea{
+	height: auto;
+	
+	
+}
+
+.description{
+	display: block;
+}
+
+.clearfix:after {
+     visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: " ";
+     clear: both;
+     height: 0;
+     }
+.clearfix { display: inline-block; }
+/* start commented backslash hack \*/
+html .clearfix { height: 1%; }
+.clearfix { display: block; }
 
 ul{
 	list-style: none;

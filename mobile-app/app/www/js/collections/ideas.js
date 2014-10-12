@@ -7,13 +7,14 @@ HeroIdea.Collections.Ideas = Backbone.Collection.extend({
     var ideas = this;
     var idea; 
     if(idea = this.get(id)){
-      idea.fetch();
+      // idea.fetch();
+			console.log('lol');
     } else {
       idea = new HeroIdea.Models.Idea({id: id});
       idea.fetch();
-      ideas.add(question);
+      ideas.add(idea);
     }
-    return question;
+    return idea;
   }, 
 	
 	parse: function(jsonResp){
