@@ -205,6 +205,19 @@ module.exports = function(app, passport) {
     app.post("/api/ideas", isLoggedInForAPI, allowCrossDomain, function (req, res) {
         ideas_controller.create(req, res, app);
     });
+
+    // votes post
+    // create a vote for the user and idea
+    app.post("/api/votes", isLoggedInForAPI, allowCrossDomain, function (req, res) {
+        votes_controller.create(req, res, app);
+    });
+
+    // votes put
+    // update a vote for the user and idea
+    app.put("/api/votes", isLoggedInForAPI, allowCrossDomain, function (req, res) {
+        votes_controller.update(req, res, app);
+    });
+    
 };
 
 // route middleware to ensure user is logged in
