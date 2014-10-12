@@ -1,8 +1,6 @@
 var users_controller = require("./controllers/users_controller.js");
 var ideas_controller = require("./controllers/ideas_controller.js");
 
-var express = require("express");
-
 module.exports = function(app, passport) {
 
 // normal routes ===============================================================
@@ -208,7 +206,18 @@ module.exports = function(app, passport) {
         ideas_controller.create(req, res, app);
     });
 
-    app.use("/mobile", express.static(__dirname + "/mobile-app/app/www/")
+    // votes post
+    // create a vote for the user and idea
+    app.post("/api/votes", isLoggedInForAPI, allowCrossDomain, function (req, res) {
+        votes_controller.create(req, res, app);
+    });
+
+    // votes put
+    // update a vote for the user and idea
+    app.put("/api/votes", isLoggedInForAPI, allowCrossDomain, function (req, res) {
+        votes_controller.update(req, res, app);
+    });
+    
 };
 
 // route middleware to ensure user is logged in
