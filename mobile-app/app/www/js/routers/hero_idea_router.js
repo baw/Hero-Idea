@@ -1,9 +1,13 @@
 HeroIdea.Routers.HeroIdeaRouter = Backbone.Router.extend({
 	  routes: {
-			'' : '',
+			'' : 'ideasIndex',
 			'ideas' : 'ideasIndex'
 		},
 		// Serves up the most recent 20 ideas
+		root : {
+			
+		},
+		
 		ideasIndex : function(){
 			var router = this;
 			var ideas = HeroIdea.Collections.ideas.fetch();
