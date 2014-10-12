@@ -1,16 +1,32 @@
 .right-slider {
-	border: solid black 1px;
-	/* padding: 4px; */
+/*	border: solid black 1px;
+
 	padding-left: 5px;
 	padding-right: 5px;
 	margin-right: 7%;
 	margin-top: 1%;
 	background-color: lightgray;
 	padding-top: -4em;
-	border-radius: 76%;
+	border-radius: 76%;*/
+	opacity: 0.3;
 	display: inline-block;
 	float: right;
 	padding-bottom: 1px;
+}
+.upvote{
+	width: 100%;
+	float:left;
+	display: inline;
+	margin-bottom: 4px;
+	margin-left: 1px;
+	font-size: 17px;
+}
+
+.downvote{
+	width: 100%;
+	float:left;
+	display: inline;
+	font-size: 17px;
 }
 
 li{
@@ -25,6 +41,37 @@ li{
 	margin-top: 1.5%;
 	margin-left: 3%;
 }
+
+.active-idea{
+	height: auto;
+	
+	
+}
+
+.vote {
+	display:inline-block;
+}
+
+.voted{
+	color: orange;
+}
+
+.description{
+	display: inline-block;
+}
+
+.clearfix:after {
+     visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: " ";
+     clear: both;
+     height: 0;
+     }
+.clearfix { display: inline-block; }
+/* start commented backslash hack \*/
+html .clearfix { height: 1%; }
+.clearfix { display: block; }
 
 ul{
 	list-style: none;
