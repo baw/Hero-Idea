@@ -190,19 +190,19 @@ module.exports = function(app, passport) {
 
     // ideas index
     // returns most recent 20 ideas
-    app.get("/api/ideas", function (req, res) {
+    app.get("/api/ideas", allowCrossDomain, function (req, res) {
        ideas_controller.index(req, res, app); 
     });
     
     // ideas show
     // returns the ideas based on the given id
-    app.get("/api/ideas/:idea_id", function (req, res, idea_id) {
+    app.get("/api/ideas/:idea_id", allowCrossDomain, function (req, res, idea_id) {
         ideas_controller.show(req, res, app, idea_id);
     });
     
     // idea create -- LOGGED IN REQUIRED
     // creates an idea based on the submitted info
-    app.post("/api/ideas", isLoggedInForAPI, function (req, res) {
+    app.post("/api/ideas", isLoggedInForAPI, allowCrossDomain, function (req, res) {
         ideas_controller.create(req, res, app);
     });
 };
@@ -222,4 +222,9 @@ function isLoggedInForAPI(req, res, next) {
     
     res.statusCode = 401;
     res.json({"error" : "not logged in"});
+}
+
+function allowCrossDomain(req, res, next) {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    next();
 }
