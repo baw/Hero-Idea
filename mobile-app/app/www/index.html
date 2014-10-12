@@ -2,6 +2,8 @@
 <html>
 <head>
 	<meta name='viewport' content='width=device-width, intial-scale-1'>
+	<script type='application/javascript' src='js/fastclick.js'></script>
+	<link rel="stylesheet" href="css/ideas.css">
 	<title>Hero Idea</title>
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
@@ -15,23 +17,21 @@
 	<script src='js/models/idea.js'></script>	
 		<script src='js/collections/ideas.js'></script>
 	<script type="text/template" id='idea-index'>
-		<table class='table table-responsive'>
-			<thead>
-				<tr>
-					<th>Title</th>
-					<th>Description</th>
-				</tr>
-			</thead>
-			<tbody>
+		<ul class='table table-responsive'>
 			<% _.each(ideas, function(idea){ %>
-				<tr>
-					<td><%= idea.get('title') %></td>
-					<td><%= idea.get('description') %></td>	
+			<li>
+					<div class='title'><%= idea.get('title') %></div>
+					<div class='right-slider'>></div>
+			</li>
 			<% }) %>
-			</tbody>
-		</table>
+
+	</ul>
 	</script>
-	
+	<script>
+	$(function() {
+	    FastClick.attach(document.body);
+	});
+	</script>
 	<script src='js/views/ideas_index.js'></script>	
 	<script src='js/routers/hero_idea_router.js'></script>	
 	<!-- // <script src='utils/composite_view.js'></script>	 -->
@@ -39,6 +39,6 @@
 	
 <script>$(HeroIdea.initialize);</script>	
 	<style>
-		body 		{ padding-top:80px; }
+
 	</style>
 </head>
