@@ -1,3 +1,4 @@
-Hero Idea
+Hero Idea -  _Share your ideas, anywhere, anytime._
 ------
-Share your ideas, anywhere, anytime.
+
+This is our submission to the Dreamforce 2014 Hackathon
